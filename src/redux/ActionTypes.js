@@ -1,1 +1,1 @@
-export const ADD_QUESTION = 'ADD_QUESTION';
+export const ADD_QUESTIONS = 'ADD_QUESTIONS';

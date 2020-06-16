@@ -3,7 +3,7 @@ import { Modal, ModalHeader, ModalBody, Button, Label, Col, Row } from 'reactstr
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
 const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !(val) || (val.length <= len);
+//const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
 
 class QuestionForm extends Component {
@@ -20,6 +20,7 @@ class QuestionForm extends Component {
         this.toggleFormModal();
         console.log("Current state is: "+JSON.stringify(values));
         alert("Current state is: "+JSON.stringify(values));
+        this.props.postQuestion(values.category,values.question,values.comment);
     }
 
     toggleFormModal() {
@@ -59,17 +60,16 @@ class QuestionForm extends Component {
                                     placeholder="Add a Question"
                                     className="form-control"
                                     validators={{
-                                        required, minLength: minLength(3), maxLength: maxLength(15)
+                                        required, minLength: minLength(3)
                                     }}
                                 />
                                 <Errors
                                     className="text-danger"
-                                    model=".name"
+                                    model=".question"
                                     show="touched"
                                     messages={{
                                         required: 'Required ',
-                                        minLength: 'Must be greater than 2 characters ',
-                                        maxLength: 'Must be 15 characters or less '
+                                        minLength: 'Must be greater than 2 characters '
                                     }}
                                 />
                             </Col>
