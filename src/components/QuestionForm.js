@@ -20,7 +20,7 @@ class QuestionForm extends Component {
         this.toggleFormModal();
         console.log("Current state is: "+JSON.stringify(values));
         alert("Current state is: "+JSON.stringify(values));
-        this.props.postQuestion(values.category,values.question,values.comment);
+        this.props.postQuestion(values.category,values.question,values.comment,values.option1,values.option2,values.option3,values.option4,values.answer);
     }
 
     toggleFormModal() {
@@ -70,6 +70,97 @@ class QuestionForm extends Component {
                                     messages={{
                                         required: 'Required ',
                                         minLength: 'Must be greater than 2 characters '
+                                    }}
+                                />
+                            </Col>
+                        </Row>
+                        <Row className="form-group">
+                            <Label className="col-12" htmlFor="">Add Options</Label>
+                            <Col sm={{size:5}} className="mb-2">
+                                <Control.text model=".option1" id="option1" name="option1"
+                                    placeholder="Option 1"
+                                    className="form-control"
+                                    validators={{
+                                        required
+                                    }}
+                                />
+                                <Errors
+                                    className="text-danger"
+                                    model=".option1"
+                                    show="touched"
+                                    messages={{
+                                        required: 'Required '
+                                    }}
+                                />
+                            </Col>
+                            <Col sm={{size:5, offset:1}} className="mb-2">
+                                <Control.text model=".option2" id="option2" name="option2"
+                                    placeholder="Option 2"
+                                    className="form-control"
+                                    validators={{
+                                        required
+                                    }}
+                                />
+                                <Errors
+                                    className="text-danger"
+                                    model=".option2"
+                                    show="touched"
+                                    messages={{
+                                        required: 'Required '
+                                    }}
+                                />
+                            </Col>
+                            <Col sm={{size:5}} className="mb-2">
+                                <Control.text model=".option3" id="option3" name="option3"
+                                    placeholder="Option 3"
+                                    className="form-control"
+                                    validators={{
+                                        required
+                                    }}
+                                />
+                                <Errors
+                                    className="text-danger"
+                                    model=".option3"
+                                    show="touched"
+                                    messages={{
+                                        required: 'Required '
+                                    }}
+                                />
+                            </Col>
+                            <Col sm={{size:5, offset:1}} className="mb-2">
+                                <Control.text model=".option4" id="option4" name="option4"
+                                    placeholder="Option 4"
+                                    className="form-control"
+                                    validators={{
+                                        required
+                                    }}
+                                />
+                                <Errors
+                                    className="text-danger"
+                                    model=".option4"
+                                    show="touched"
+                                    messages={{
+                                        required: 'Required '
+                                    }}
+                                />
+                            </Col>
+                        </Row>
+                        <Row className="form-group">
+                            <Label className="col-12" htmlFor="answer">Correct Option</Label>
+                            <Col>
+                                <Control.text model=".answer" id="answer" name="answer"
+                                    placeholder="Correct Option"
+                                    className="form-control"
+                                    validators={{
+                                        required
+                                    }}
+                                />
+                                <Errors
+                                    className="text-danger"
+                                    model=".answer"
+                                    show="touched"
+                                    messages={{
+                                        required: 'Required '
                                     }}
                                 />
                             </Col>

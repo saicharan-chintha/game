@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-	postQuestion: (category, question, comment) => dispatch(postQuestion(category, question, comment))
+	postQuestion: (category, question, comment, option1, option2, option3, option4, answer) => dispatch(postQuestion(category, question, comment, option1, option2, option3, option4, answer))
 });
 
 class Main extends Component {

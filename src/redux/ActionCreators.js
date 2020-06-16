@@ -6,12 +6,19 @@ export const addQuestion = (question) => ({
     payload : question
 });
 
-export const postQuestion = (category, question , comment) => (dispatch) => {
+export const postQuestion = (category, question , comment, option1, option2, option3, option4, answer) => (dispatch) => {
 
     const newQuestion = {
         category: category,
         question: question,
-        comment: comment
+        options: {
+            option1 : option1,
+            option2 : option2,
+            option3 : option3,
+            option4 : option4
+        },
+        answer: answer,
+        comment: comment,
     };
     
     return fetch(baseUrl + 'questions', {
