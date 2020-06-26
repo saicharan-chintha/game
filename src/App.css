@@ -3,10 +3,40 @@
   padding:0px auto;
 }
 
+.navbar-dark {
+  background-color: #512DA8;
+}
+
 .jumbotron {
   padding:70px 30px 70px 30px;
   margin:0px auto;
-  /* background: #9575CD ; */
-  background: #1E90FF;
+  background: #9575CD;
   color:floralwhite;
 }
+
+.box {
+  display : block;
+  width : 100%;
+  padding : 55px 0px;
+  font-size : 30px;
+  color : black;
+  border-radius: 5%;
+  background-color: lightgray;
+  font-size : 35px;
+  font-family: cursive;
+}
+
+.App1 {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+}
+
+.btnbox{
+  color:black;
+  float:right;
+  width: 90px;
+}
+
